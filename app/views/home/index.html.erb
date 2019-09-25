@@ -1,0 +1,28 @@
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/assets/application.scss">
+	<title>Webcamp_Bookers2</title>
+</head>
+
+<body>
+	<h1>Welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+Bookers  !!</h1>
+   <p>In <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+Bookers,</p>
+
+   <p>you can share and exchange your opinions , inpressions , and emotions</p>
+   <p> about varioius books!</p>
+
+   <%= link_to "Log_in", new_user_session_path %>
+   <%= link_to "Sign_up", new_user_registration_path %>
+
+
+
+</body>
+</html>
