@@ -2,6 +2,12 @@
   <%= content_tag(:div, value, class: "#{key}") %>
 <% end %>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8">
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,10 +25,13 @@ Bookers,</p>
    <p>you can share and exchange your opinions , inpressions , and emotions</p>
    <p> about varioius books!</p>
 
-   <%= link_to "Log_in", new_user_session_path %>
-   <%= link_to "Sign_up", new_user_registration_path %>
-
-
-
+   <%= link_to "Log_in", new_user_session_path, class: 'btn btn-info btn-block'  %>
+   <%= link_to "Sign_up", new_user_registration_path, class: 'btn btn-success btn-block' %>
+</div>
+    <div class="col-sm-2">
 </body>
 </html>
+</div>
+</div>
+</div>
+

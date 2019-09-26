@@ -9,21 +9,22 @@
 <h2>Users</h2>
 
 <table class="table table-striped">
+    <thead>
 	<tr>
 		<th>image</th>
 		<th>name</th>
 	</tr>
-</table>
-
+    </thead>
+    <tbody>
 <% @users.each do |user| %>
-<table class="table table-striped">
     <tr>
-        <td><span><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: "img", fallback: "default.jpg", size: "60x60" %> </span> </td>
-    	<td><span><%= user.name %> </span> </td>
-    	<td><span><%= link_to "show", user_path(user.id) %> </span> </td>
+        <td><span><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: "img", fallback: "default.jpg", size: "60x60" %></span></td>
+    	<td><span><%= user.name %> </span></td>
+    	<td><span><%= link_to "show", user_path(user.id) %></span></td>
     </tr>
-</table>
 <% end %>
+</tbody>
+</table>
 </div>
 </div>
 </div>

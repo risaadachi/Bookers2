@@ -11,23 +11,23 @@
 <h2>Books</h2>
 
 <table class="table table-striped">
+  <thead>
 	<tr>
+        <td></td>
 		<th>Title</th>
 		<th>Opinion</th>
-	</tr>
-</table>
-
-
-<% @books.each do |book| %>
-<table class="table table-striped">
-    <tr>
-    	<td><span><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: "img", fallback: "default.jpg", size: "60x60" %> </span> </td>
-    	<td><span><%= link_to "#{book.title}", book_path(book.id) %> </span> </td>
-    	<td><span><%= book.body %> </span> </td>
     </tr>
-</table>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+    	<td><span><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: "img", fallback: "default.jpg", size: "60x60" %> </span></td>
+    	<td><span><%= link_to "#{book.title}", book_path(book.id) %> </span></td>
+    	<td><span><%= book.body %> </span></td>
+    </tr>
 <% end %>
-
+</tbody>
+</table>
 </div>
 </div>
 </div>

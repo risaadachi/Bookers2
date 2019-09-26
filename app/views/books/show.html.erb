@@ -4,22 +4,25 @@
 
 <%= flash[:notice] %>
 
-<%= render 'temp/temp', user: @user, book: @book %>
+<%= render 'temp/temp', user: @user, book: @book_show %>
 </div>
     <div class="col-sm-9">
 
 <h2>Book detail</h2>
 
-
-<span><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: "jpg"  %></span>
-<span><%= link_to "#{@user.name}", user_path(@user.id) %></span>
-<span><%= link_to "#{@book.title}", book_path(@book.id) %></span>
-<span><%= @book.body %></span>
+<table class="table table-striped">
+<tr>
+  <th><span><%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: "jpg"  %></span>
+  <p><span><%= link_to "#{@user.name}", user_path(@user.id) %></span></th></p>
+  <th><span><%= link_to "#{@book.title}", book_path(@book.id) %></span></th>
+  <th><span><%= @book.body %></span></th>
 
 <% if @book.user == current_user %>
-  <%= link_to "Edit", edit_book_path(@book.id) %>
-  <%= link_to "Destroy", book_path(@book.id), method: :delete, data: { confirm: '本当に消しますか？'} %>
+  <th><%= link_to "Edit", edit_book_path(@book.id), class:'btn btn-success' %></th>
+  <th><%= link_to "Destroy", book_path(@book.id), method: :delete, data: { confirm: '本当に消しますか？'}, class:'btn btn-danger' %></th>
 <% end %>
+</tr>
+</table>
 </div>
 </div>
 </div>
